@@ -7,18 +7,24 @@
     "test": "mocha -r ts-node/register tests/*_test.ts",
     "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
     "dev": "npx ts-node src/app.ts",
+    "analyse": "tsc && node --inspect ./build/app.js",
     "build": "tsc",
-    "js": "node ./build/src"
+    "js": "node ./build/app.js"
   },
   "author": "Cedric Ahlers",
   "license": "ISC",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.18.0",
+    "@types/rimraf": "^3.0.0",
     "archiver": "^5.3.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@types/archiver": "^5.1.0",
-    "@types/node": "^15.12.1"
+    "@types/node": "^15.12.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.29.0"
   }
 }

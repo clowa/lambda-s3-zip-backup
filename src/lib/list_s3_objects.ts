@@ -1,7 +1,7 @@
 import { S3Client, ListObjectsV2CommandInput, ListObjectsV2Command, _Object } from "@aws-sdk/client-s3";
 
 export async function listS3Objects(client: S3Client, config: ListObjectsV2CommandInput, items: _Object[] = []): Promise<_Object[]> {
-  console.log(`List objects of ${config.Bucket} with token ${config.ContinuationToken} ...`);
+  console.log(`List objects of ${config.Bucket} with token ${config.ContinuationToken}`);
 
   const command = new ListObjectsV2Command(config);
   const response = await client.send(command);
